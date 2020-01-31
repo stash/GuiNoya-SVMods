@@ -51,6 +51,11 @@ namespace DailyTasksReport.Tasks
 
         private void SettingsMenu_ReportConfigChanged(object sender, EventArgs e)
         {
+            ReReadConfig();
+        }
+
+        private void ReReadConfig()
+        {
             switch (_id)
             {
                 case CropsTaskId.UnwateredCropFarm:
@@ -298,31 +303,7 @@ namespace DailyTasksReport.Tasks
                 FruitTrees[1].Clear();
             }
 
-            switch (_id)
-            {
-                case CropsTaskId.UnwateredCropFarm:
-                case CropsTaskId.UnwateredCropGreenhouse:
-                    Enabled = _config.UnwateredCrops;
-                    break;
-
-                case CropsTaskId.UnharvestedCropFarm:
-                case CropsTaskId.UnharvestedCropGreenhouse:
-                    Enabled = _config.UnharvestedCrops;
-                    break;
-
-                case CropsTaskId.DeadCropFarm:
-                case CropsTaskId.DeadCropGreenhouse:
-                    Enabled = _config.DeadCrops;
-                    break;
-
-                case CropsTaskId.FruitTreesFarm:
-                case CropsTaskId.FruitTreesGreenhouse:
-                    Enabled = _config.FruitTrees > 0;
-                    break;
-
-                default:
-                    throw new ArgumentOutOfRangeException($"Crop task or location not implemented");
-            }
+            ReReadConfig();
         }
     }
 
