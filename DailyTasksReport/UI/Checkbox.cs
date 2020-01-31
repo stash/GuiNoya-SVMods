@@ -115,6 +115,10 @@ namespace DailyTasksReport.UI
                     _isChecked = _config.UnharvestedCrops;
                     break;
 
+                case OptionsEnum.UnharvestedFlowers:
+                    _isChecked = _config.UnharvestedFlowers;
+                    break;
+
                 case OptionsEnum.DeadCrops:
                     _isChecked = _config.DeadCrops;
                     break;
@@ -413,6 +417,10 @@ namespace DailyTasksReport.UI
 
                 case OptionsEnum.UnharvestedCrops:
                     _config.UnharvestedCrops = _isChecked;
+                    break;
+
+                case OptionsEnum.UnharvestedFlowers:
+                    _config.UnharvestedFlowers = _isChecked;
                     break;
 
                 case OptionsEnum.DeadCrops:

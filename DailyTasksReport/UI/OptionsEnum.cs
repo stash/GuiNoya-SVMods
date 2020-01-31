@@ -27,6 +27,7 @@
         Birthdays = 111,
         TravelingMerchant = 112,
         FruitTrees = 113,
+        UnharvestedFlowers = 114,
 
         /* Animal products */
         AllAnimalProducts = 200,

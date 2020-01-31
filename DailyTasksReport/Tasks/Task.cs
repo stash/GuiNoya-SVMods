@@ -8,6 +8,7 @@ namespace DailyTasksReport.Tasks
     public abstract class Task
     {
         internal static readonly Dictionary<int, string> ObjectsNames = new Dictionary<int, string>();
+        internal static readonly Dictionary<int, int> ObjectsCategory = new Dictionary<int, int>();
         protected bool Enabled = true;
 
         protected abstract void FirstScan();
@@ -63,7 +64,11 @@ namespace DailyTasksReport.Tasks
         internal static void PopulateObjectsNames()
         {
             foreach (var pair in Game1.objectInformation)
+            {
                 ObjectsNames[pair.Key] = pair.Value.Split("/".ToCharArray())[0];
+                var o = new Object(pair.Key, 0);
+                ObjectsCategory[pair.Key] = o.Category;
+            }
         }
     }
 }

@@ -39,6 +39,9 @@ namespace DailyTasksReport
         /// <summary> Check or not for unharvested crops in farm and greenhouse. </summary>
         public bool UnharvestedCrops { get; set; } = true;
 
+        /// <summary> Check or not for unharvested flowers in farm and greenhouse. </summary>
+        public bool UnharvestedFlowers { get; set; } = true;
+
         /// <summary> Check or not if there are dead crops. </summary>
         public bool DeadCrops { get; set; } = true;
 
